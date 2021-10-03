@@ -1,17 +1,10 @@
 import { Cliente } from './Cliente.js'
 
-export class ContaCorrente extends Cliente {
-  static numeroDeConta = 0
-
-  get saldo() {
-    return this._saldo
-  }
-
-  constructor(nome, cpf, agencia, saldo) {
+export class ContaPoupanca extends Cliente {
+  constructor(nome, cpf, saldoInicial, agencia) {
     super(nome, cpf)
-    this.agencia = agencia
-    this._saldo = saldo
-    ContaCorrente.numeroDeConta += 1
+    this._saldo = saldoInicial
+    this._agencia = agencia
   }
 
   depositar(valor) {

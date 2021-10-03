@@ -1,8 +1,20 @@
 export class Cliente {
-  constructor(nome, cpf, agencia, saldo) {
+  get cpf() {
+    return this._cpf
+  }
+
+  get nome() {
+    return this._nome
+  }
+
+  set nome(nomeNovo) {
+    if (nomeNovo !== '') {
+      this._nome = nomeNovo
+    }
+  }
+
+  constructor(nome, cpf) {
     this.nome = nome
-    this.cpf = cpf
-    this.agencia = agencia
-    this.saldo = saldo
+    this._cpf = cpf
   }
 }
