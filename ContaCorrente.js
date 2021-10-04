@@ -9,7 +9,7 @@ export class ContaCorrente extends Cliente {
 
   constructor(nome, cpf, agencia, saldo) {
     super(nome, cpf)
-    this.agencia = agencia
+    this._agencia = agencia
     this._saldo = saldo
     ContaCorrente.numeroDeConta += 1
   }
