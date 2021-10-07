@@ -5,10 +5,13 @@ export class Conta extends Cliente {
     return this._saldo
   }
 
-  constructor(nome, cpf, saldoInicial, agencia) {
+  constructor(nome, cpf, agencia, saldoInicial) {
     super(nome, cpf)
-    this._saldo = saldoInicial
     this._agencia = agencia
+    this._saldo = saldoInicial
+    if (this.constructor == Conta) {
+      throw new Error('Você não deveria instanciar um objeto do tipo Conta')
+    }
   }
 
   depositar(valor) {
@@ -16,12 +19,17 @@ export class Conta extends Cliente {
   }
 
   sacar(valor) {
-    let taxa = 1
+    throw new Error('O método Sacar da conta é abstrato')
+  }
+
+  _sacar(valor, taxa) {
     const valorSacado = taxa * valor
     if (this._saldo >= valorSacado) {
       this._saldo -= valorSacado
       return valorSacado
     }
+
+    return 0
   }
 
   transferir(valor, conta) {

@@ -16,5 +16,8 @@ export class Cliente {
   constructor(nome, cpf) {
     this.nome = nome
     this._cpf = cpf
+    if (this.constructor == Cliente) {
+      throw new Error('Você não deveria instanciar um objeto do tipo Cliente')
+    }
   }
 }
