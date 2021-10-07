@@ -1,8 +1,8 @@
 import { Conta } from './Conta.js'
 
 export class ContaSalario extends Conta {
-  constructor(nome, saldoInicial) {
-    super(nome, saldoInicial)
+  constructor(nome, cpf, agencia, saldoInicial) {
+    super(nome, cpf, agencia, saldoInicial)
   }
 
   sacar(valor) {
