@@ -1,11 +1,8 @@
-import { ContaCorrente } from './Conta/ContaCorrente.js'
-import { ContaPoupanca } from './Conta/ContaPoupanca.js'
-import { ContaSalario } from './Conta/ContaSalario.js'
+import { Diretor } from './Funcionario/Diretor.js'
+import { SistemaAutenticacao } from './SistemaAutenticacao.js'
 
-const magnoCorrente = new ContaCorrente('Magno', '55555555555', '568-2', 100)
-const magnoPo = new ContaPoupanca('Magno', '55555555555', '568-2', 50)
-const magnoSa = new ContaSalario('Magno', '8788655656', '7896', 70)
+const diretor = new Diretor('Magno', 10000, 123456789)
 
-console.log(magnoSa)
-console.log(magnoCorrente)
-console.log(magnoPo)
+diretor.cadastrarSenha('555555555555')
+const estaLogado = SistemaAutenticacao.login(diretor, '555555555555')
+console.log(estaLogado)

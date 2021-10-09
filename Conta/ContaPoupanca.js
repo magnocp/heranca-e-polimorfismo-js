@@ -1,8 +1,8 @@
 import { Conta } from './Conta.js'
 
 export class ContaPoupanca extends Conta {
-  constructor(nome, cpf, agencia, saldoInicial) {
-    super(nome, cpf, agencia, saldoInicial)
+  constructor(saldoInicial, cliente, agencia) {
+    super(saldoInicial, cliente, agencia)
   }
 
   sacar(valor) {
