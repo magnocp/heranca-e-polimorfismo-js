@@ -29,7 +29,7 @@ export class Conta {
     this._saldo += valor
   }
 
-  sacar(valor) {
+  sacar() {
     throw new Error('O método Sacar da conta é abstrato')
   }
 
